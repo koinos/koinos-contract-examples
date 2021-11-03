@@ -151,8 +151,6 @@ token::mint_result mint( const token::mint_arguments< constants::max_address_siz
    std::string to( reinterpret_cast< const char* >( args.get_to().get_const() ), args.get_to().get_length() );
    uint64_t amount = args.get_value();
 
-   const auto [ caller, privilege ] = system::get_caller();
-
    system::require_authority( system::get_contract_id() );
 
    auto supply = total_supply().get_value();
